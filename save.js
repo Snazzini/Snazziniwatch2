@@ -1,7 +1,7 @@
 #include <pebble.h>
 
-static Window *s_window;
-static TextLayer *s_text_layer;
+static Window s_window;
+static TextLayer s_text_layer;
 
 static void init(void) {
 	// Create a window and get information about the window
@@ -33,9 +33,7 @@ static void init(void) {
 static void deinit(void) {
 	// Destroy the text layer
 	text_layer_destroy(s_text_layer);
-	
-	// Destroy the window
-	window_destroy(s_window);
+
 }
 
 int main(void) {
